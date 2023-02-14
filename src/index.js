@@ -37,8 +37,8 @@ const MORSE_TABLE = {
     '-----':  '0',
 };
 
-function decode(expr) {
-    let morseStr = expr.split(" ")
+function decode(MORSE_TABLE) {
+    let morseStr = MORSE_TABLE.split(" ")
 
     for( let i = 0; i < morseStr.length; i++){
         if(morseStr[i] === "" &&  morseStr[i - 1] === ""){
