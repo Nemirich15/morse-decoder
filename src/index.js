@@ -37,20 +37,19 @@ const MORSE_TABLE = {
     '-----':  '0',
 };
 
-function decode(MORSE_TABLE) {
-    let morseStr = MORSE_TABLE.split(" ")
+function decode(morseCode) {
+    
+    outPut = "";
 
-    for( let i = 0; i < morseStr.length; i++){
-        if(morseStr[i] === "" &&  morseStr[i - 1] === ""){
-            morseStr.splice(i, 2, " ")
+    for( let i = 0; i < morseCode.split(" ").length; i++){
+        if( i === " ") {
+           outPut += " ";
         }
-        if(morseStr[i] !== ""){
-            morseStr[i] = MORSE_TABLE[morseStr[i]]
-        } else {
-            morseStr[i] = " "
+         else {
+            outPut += MORSE_CODE[morseCode.split(" ")[i]];
         }
     }
-    return morseStr.join("")
+    return outPut;
 }
 
 module.exports = {
