@@ -37,16 +37,16 @@ const MORSE_TABLE = {
     '-----':  '0',
 };
 
-function decode(morseCode) {
+function decode(MORSE_TABLE) {
     
     outPut = "";
 
-    for( let i = 0; i < morseCode.split(" ").length; i++){
+    for( let i = 0; i < MORSE_TABLE.split(" ").length; i++){
         if( i === " ") {
            outPut += " ";
         }
          else {
-            outPut += MORSE_CODE[morseCode.split(" ")[i]];
+            outPut += MORSE_CODE[MORSE_TABLE.split(" ")[i]];
         }
     }
     return outPut;
